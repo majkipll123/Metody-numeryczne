@@ -1,0 +1,20 @@
+#Żle uwarunkowane macierze powodują brak wraźliwości na małe błedy 
+#bardzo małe zmiany w danych wejsciowych powodują duże zmiany w wynikach
+#macierz Hilberta 
+import numpy as np
+from numpy import linalg as LA 
+
+for j in range (2,17):
+    print ("%3d  %e"%(j, LA.cond(LA.hilbert(j),np.inf)))
+
+n=4 
+while n<17:
+    H= LA.hilbert(n)
+    b=np.zeros(n)
+
+    for i in range (n):
+        b[i]=np.sum(H[i])
+    
+    x= LA.solve(H,b)
+    print('\nn=',n,' x=',x)
+    n=n*2
