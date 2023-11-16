@@ -1,0 +1,94 @@
+calkowanie numeryczne 
+całka z funkcji gausa nie jest wyrazana analitycznie 
+
+Rozpinamy wielomian na punktrach o znanym f(xj)
+o(x) = suma od 0 do n z f(xi)*oi(x)
+oi(x)= iloczyn od 0 do n z (x-xj)/(xi-xj) dla i!=j
+suma kombinacji linowej wartosci funkcji w przedziale 
+całka oznaczona f(x)dx = suma od k=0 do n Ak*f(xk)
+takie szacowanie całki nazywamy kwadraturą
+
+rozpinanie wielomianow w przypadku liczenia całek robimy lokalnie i kontrolujemy jakiego stopnia wielomiany rozbijamy
+
+metoda trapezow (najprostrze rozwiniecie)
+jest to rozwiniecie interpolacji pionowej 
+całka oznaczona f(x)dx = suma od k=0 do N (f(xk-1)+f(xk))/2 * delta xk
+błąd liczenia całki w takie sposob w kazdym z podpól jest rzędu -1/12 * (b-a)^3 * f''(ksi)
+przy punktach rowno odleglych mozna zapisac to tez jako 
+całka oznaczona f(x)dx = h*(suma od i=1 do n-1 f(xi))* (f(x0)+f(xn)/2)
+
+metoda simpsona/keplera(rozwinięcie interpolacji kwadratowej)
+
+znacznie lepiej przybliza lokalny przebieg funkcji 
+najprostrza całka oznaczona f(x)dx = h/3 * (f(a)+4f(a+b/2)+f(b)) + O(h^5)
+teraz rozbijamy na wiecej niz 3 punkty 
+wzor ogolny to 
+całka oznaczona od a do b f(x)dx = deltax/3 (f(x0)+4f(x1)+2f(x2)+4f(x3)+2f(x4)+...+4f(xn-1)+f(xn))
+
+kwadratury newtona-cotesa
+
+trapez h/2(f0+f1) blad -1/12 * (b-a)^3 * f''(ksi)
+
+simpson h/3(f0+4f1+2f2) blad -1/90 * (b-a)^5 * f''''(ksi) metoda w ktorej liczba puktow zawsze musi byc nieparzysta 
+niepewnosc spada duzo szybciej wraz z zmniejszeinem odlegloscimiedzy punktami
+
+3/8 3h/8(f0+3f1+3f2+f3) blad -3/80 * (b-a)^5 * f''''(ksi) 
+
+boole'a 2h/45(7f0+32f1+12f2+32f3+7f4) blad -8/945 * (b-a)^7 * f^6(ksi)
+
+metoda romberga rozwiniecie metody trapezow ktora daje wysokie precyzje a koszt liczenia jest tylko policzenie całki z h3
+
+delta = -(b-a)/12N^2 *f''(ksi) = -(b-a)/12 *h^2 *f''(ksi)
+
+I-> prawdziwa wartosć całki 
+R(h) = I + c1*h^2 + c2*h^4 ...
+R(2h) = I + c1*4h^2 + c2*16h^4 ...
+4R(h) - R(2h)/3 = I + c2*h^4 + c3*h^6 ... błąd mniejszego rzędu 
+
+ho R0,0 
+h1 R1,0 R1,1
+h2 R2,0 R2,1 R2,2
+h3 R3,0 R3,1 R3,2 R3,3
+
+wzor ogolny 
+R(n,m) = 1/(4^m-1) * (4^m * R(n,m-1) - R(n-1,m-1))
+
+wszystkie wzroy sa dostepne w scipy.integrate 
+
+kwadratury gaussa 
+
+całka oznaczona od -1 do 1 f(x)dx = suma od i=1 do n wi*fi(ti)
+Dla każdego wielomianu rzędu conajwyżej 2n-1 jest to rozwiązanie dokładne 
+Podstawowy zestaw ti to węzły zerowe wielomianu Legendre'a 
+from scipy.special import roots_legendre
+xi, ai = roots_legendre(5)
+xi to wartość pierwiastka 
+ai to waga 
+dla przedziału -1 do 1
+całka oznaczona od a do b f(x)dx = (b-a)/2 * suma od i=1 do n wi*fi((b-a)/2*xi+(b+a)/2)
+
+1/sqrt2 * całka oznaczona od -3 do 3 exp(-(x^2)/2)dx 
+
+rodzina kwadrtur gaussa 
+
+całka od -1 do 1 p(x)*f(x)dx = suma od i=1 do n Ai*f(xi)
+
+I(f) = całka oznaczona od -1 do 1 f(x) *dx/ sqrt(1-x^2) wielomiany czebyszewa
+I(f) = całka oznaczona od -inf do inf exp(-x^2) *f(x)dx funkcje gausa-hermite'a
+I(f) = całka oznaczona od 0 do inf exp(-x) *f(x)dx funkcje laguerre'a
+I(f) = całka oznaczona od -1 do 1 (1-x)^alf(a1+x^)b dx  wielomiany jakobiego  
+
+gotowce w pythonie
+
+scipy.special.roots_legendre
+scipy.special.roots_chebyt
+scipy.special.roots_chebyu
+scipy.special.roots_chebyc
+
+elementarne procedury w pythonie 
+scipy.integrate.quad
+scipy.integrate.quadrature
+scipy.integrate.fixed_quad
+odwoluja sie do kwadratur gaussa legendra 
+
+
