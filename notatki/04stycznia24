@@ -22,3 +22,6 @@ wektory wlasne macierzy symetrzycznych sa liczbami rzeczywistymi
 wektory wlasne macierzy symetrzycznych sa zawsze ortogonalne 
 wektory wlasne macierzy symetrzycznych i dodatnio-zdefiniowana sa z dodatnimi rzczeczywistymi
 jezeli macierz mam wektory wlasne  to macierz A^-1 sa odwrotnosciami wetorow wlasnych
+scipy.linalg.eigh gotowce do odnajdowania wartosci i wektorow wlasnych dotyczy macierzy hermitowskich
+scipy.linalg.eig jest bardziej ogolny 
+scipy.linalg.eigh_tridiagonal dla macierzy gdzie sa 3 zera w kazdym z rogow 
