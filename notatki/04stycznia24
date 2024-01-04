@@ -25,3 +25,33 @@ jezeli macierz mam wektory wlasne  to macierz A^-1 sa odwrotnosciami wetorow wla
 scipy.linalg.eigh gotowce do odnajdowania wartosci i wektorow wlasnych dotyczy macierzy hermitowskich
 scipy.linalg.eig jest bardziej ogolny 
 scipy.linalg.eigh_tridiagonal dla macierzy gdzie sa 3 zera w kazdym z rogow 
+
+kwandowe stany stacjonarne 
+kwadrat funcji falowej (moduł) okresnla prawdopodobienstwo znalezienia czastki w przestrzeni 
+
+scipy.sparse.eigsh
+dalczeogo im gesciej robimy pochodna nie jest lepiej?
+poniewaz abrdzo male roznice sa dzielone przez bardzo male liczby 
+zeby liczyc 2 pochodna trzeba odjac od siebie bardzo niskie liczby 
+odejmowanie tego traci miejsca znaczace poniewaz odejmujemy zbyt blisko siebie liczby 
+kazda z metod numerycznych ma swoj zakres dobrego działania 
+
+rozpoznawanie twarzy nazywa sie eigenfaces xd? 
+z przestrzeni roznych twarzy roznych ludzi mozna stworzyc uklad 
+z ktorego mozna odtworzyc kazda twarz (odtworzenie przyblizone)
+
+:wartosci wlasne bez gotowcow 
+
+metoda potęgowa
+na czym polega? 
+mammy macierz a dla ktorej chcemy znalesc wartosci wlasne  NIEZEROWY
+i mnozymy ciagle przez jakieś Z poprzez unormowanie przez norme euklidowoa 
+i zastapimy wektor poprzez unormowanie do dligosci i 
+wartosci tore uzyskujemy moga uzyskac dowolna wartosc wlasna ta opcja ma tencencje do 
+zbiegania sie do najwiekszej wartosci wlasnej oraz najwiekszego wektora
+
+odwrocona metoda potegowa
+daje wartosc najmniejsza wiec reszta jest pomiedzy nimi
+
+przesuwanie wartosci wlasnych polega na zastapieniu oryginalnej macierzy np przesuwajac elementy na diagonali
+o jakas wartość  scipy.linalg.eigh 
