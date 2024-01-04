@@ -1,0 +1,24 @@
+raporty tematy raportow 
+raport jest czescia egzaminu
+propozycja egzaminow 
+jesli raport bedzie bdb i masz 4 na zaliczeniu (cwiczen) to nie trzeba ustnego 
+to masz 5 
+plik w pdf wszystko porzadnie opisane 
+jak rozpoznajesz jakie metody i jakie wyniki 
+jakie podstawowe metody, z jakich mozna kozystac zeby osiagnac dany wynik
+wektory wlasne 
+i macierze 
+przekrztałcenia jaka jest mnozenie macierzy 
+w kazdej z przekrztałcen macierzy sa wektory o kierunkach ktore nie zmieniaja sie 
+tylko wydluzaja sie albo poszerzają 
+istnieja kategorie trajektorii w ktorej zmianiaja dlugosc ale nie kierunek, sa to wektory wlasne 
+poszukiwanie tych wktorów pozwala osiagnac ciekawe wyniki 
+zagadnienia wlasne 
+Ax = lambdaX
+(A-lambda jedynkowa)X = 0 
+wyznacznik macierzy a-lambda1 = 0 
+wektor wlasny to nie pojedynczy wektor ale to zawsze sa rodziny 
+wektory wlasne macierzy symetrzycznych sa liczbami rzeczywistymi
+wektory wlasne macierzy symetrzycznych sa zawsze ortogonalne 
+wektory wlasne macierzy symetrzycznych i dodatnio-zdefiniowana sa z dodatnimi rzczeczywistymi
+jezeli macierz mam wektory wlasne  to macierz A^-1 sa odwrotnosciami wetorow wlasnych
